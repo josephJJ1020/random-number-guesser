@@ -25,8 +25,6 @@ def main():
     x = 1
 
     def guess(x):
-        if x == 10:
-            print("Last attempt!")
 
         guess_num = input("Guess the number!")
         if guess_num.isdigit():
@@ -36,12 +34,12 @@ def main():
             print("Game over!")
         else:
             if guess_num > number_guess:
-                print("Go lower!")
+                print("Go lower! " + str(10-x) + " attempts left!")
                 x += 1
                 guess(x)
 
             if guess_num < number_guess:
-                print("Go higher!")
+                print("Go higher!"  + str(10-x) + " attempts left!")
                 x += 1
                 guess(x)
 
@@ -54,4 +52,6 @@ def main():
                 if play_again == "N":
                     print("Thank you for playing!")
     guess(x)
-main()
+    
+if __name__ == "__main__":
+    main()
